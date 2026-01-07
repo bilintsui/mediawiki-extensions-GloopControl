@@ -3,8 +3,8 @@
 namespace MediaWiki\Extension\GloopControl;
 
 use Exception;
-use HTMLForm;
-use ManualLogEntry;
+use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\RenameUser\RenameuserSQL;

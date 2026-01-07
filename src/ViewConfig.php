@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\GloopControl;
 
-use ExtensionRegistry;
-use FormatJson;
+use MediaWiki\Registration\ExtensionRegistry;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\SyntaxHighlight\SyntaxHighlight;
 
 class ViewConfig extends GloopControlSubpage {

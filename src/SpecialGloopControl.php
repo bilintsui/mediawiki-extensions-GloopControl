@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\GloopControl;
 
-use ExtensionRegistry;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Extension\OATHAuth\IModule;
 use MediaWiki\Html\TemplateParser;
 use MediaWiki\MediaWikiServices;
@@ -10,7 +10,7 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 use Monolog\Handler\MissingExtensionException;
-use PermissionsError;
+use MediaWiki\Exception\PermissionsError;
 
 class SpecialGloopControl extends SpecialPage {
 	public TemplateParser $templateParser;

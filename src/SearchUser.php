@@ -2,10 +2,10 @@
 
 namespace MediaWiki\Extension\GloopControl;
 
-use ExtensionRegistry;
-use FormatJson;
-use HTMLForm;
-use Language;
+use MediaWiki\Registration\ExtensionRegistry;
+use MediaWiki\Json\FormatJson;
+use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Language\Language;
 use MediaWiki\Extension\OATHAuth\IModule;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;

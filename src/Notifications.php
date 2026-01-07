@@ -3,7 +3,7 @@
 
 namespace MediaWiki\Extension\GloopControl;
 
-use ManualLogEntry;
+use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\Extension\Notifications\Model\Event;
 use MediaWiki\Extension\Notifications\UserLocator;
 use MediaWiki\Html\Html;

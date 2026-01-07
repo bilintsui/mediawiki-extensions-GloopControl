@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\GloopControl;
 
-use GenericParameterJob;
-use Job;
+use MediaWiki\JobQueue\GenericParameterJob;
+use MediaWiki\JobQueue\Job;
 use MediaWiki\Extension\Notifications\Model\Event;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\IDatabase;
