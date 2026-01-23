@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\GloopControl;
 
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\SyntaxHighlight\SyntaxHighlight;
@@ -40,10 +41,13 @@ class ViewConfig extends GloopControlSubpage {
 
 		// If the GeSHi syntax highlight extension is loaded, syntax highlight the JSON.
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'SyntaxHighlight' ) ) {
+			/* @var SyntaxHighlight $syntaxHighlight */
+			$syntaxHighlight = MediaWikiServices::getInstance()->getService( 'SyntaxHighlight.SyntaxHighlight' );
+
 			// For this request only, increase the maximum number of bytes that can be used for syntax highlighting.
 			$wgSyntaxHighlightMaxBytes = 500000;
 
-			$status = SyntaxHighlight::highlight( $json, 'json', [ 'line' => true, 'linelinks' => 'L' ] );
+			$status = $syntaxHighlight->syntaxHighlight( $json, 'json', [ 'line' => true, 'linelinks' => 'L' ] );
 			if ( $status->isOK() ) {
 				return $status->getValue();
 			}

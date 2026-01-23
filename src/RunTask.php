@@ -137,7 +137,7 @@ class RunTask extends GloopControlSubpage {
 			$user = $this->getUserFromName( $formData[ 'username' ] );
 			if ( !$user ) {
 				$out->addHTML( Html::errorBox(
-					$out->msg( 'gloopcontrol-tasks-error-user-not-found', $user->getName() ) ) );
+					$out->msg( 'gloopcontrol-tasks-error-user-not-found', $formData[ 'username' ] ) ) );
 				return;
 			}
 			if ( $user->getId() === $this->special->getUser()->getId() ) {
@@ -245,7 +245,7 @@ class RunTask extends GloopControlSubpage {
 			$user->getActorId();
 		} else {
 			$user = $this->uf->newFromName( $username );
-			if ( !$user ) {
+			if ( !$user || !$user->isRegistered() ) {
 				return null;
 			}
 		}
